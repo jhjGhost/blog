@@ -1,0 +1,24 @@
+{%extends 'index.html'%}
+
+{%block main%}
+
+<h3>用户列表</h3>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>是否是管理员</th>
+    </tr>
+    {%for user in users %}
+    <tr>
+        <td>{{user.uid}}</td>
+        <td>{{user.uname}}</td>
+        <td>{{user.pwd}}</td>
+        <td>
+            {%if user.isAdmin==1%}是{%else%}否{%endif%}</td>
+    </tr>
+    {%endfor%}
+</table>
+{%include 'sortPage.html'%}
+{% endblock %}

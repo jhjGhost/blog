@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Red Blog Theme - Free CSS Templates</title>
+    <link href="../../public/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../public/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../../public/js/api_index.js"></script>
+</head>
+<body>
+
+<div id="templatemo_top_wrapper">
+    <div id="templatemo_top">
+        <div id="templatemo_menu">
+            <ul>
+                <li><a href="" class="current">首页</a></li>
+                <li><a href="">投资</a></li>
+                <li><a href="">服务</a></li>
+                <li><a href="">联系我们</a></li>
+                {%if userInfo.uname %}
+                     {%if userInfo.isAdmin==1 %}
+                <li><a href="/admin">Hi,&nbsp;&nbsp;&nbsp;管理员{{userInfo.uname}}</a></li>
+                     {%else%}
+                <li><a href="#">Hi,&nbsp;&nbsp;&nbsp;{{userInfo.uname}}</a></li>
+                    {%endif%}
+                {%else%}
+                <li><a href="/api">登录</a></li>
+                {%endif%}
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="templatemo_header_wrapper">
+    <div id="templatemo_header">
+        <div id="site_title">
+            <h1><a href="#" target="_parent">Blogs<strong></strong></a></h1>
+        </div>
+    </div>
+</div>
+
+<div id="templatemo_main_wrapper">
+    <div id="templatemo_main">
+        <div id="templatemo_main_top">
+            <div id="templatemo_content">
+                {%for c in contents %}
+                <div class="post_section">
+                    <div class="post_date">
+                        {{c.addDay}}<span>{{c.addMonth}}</span>
+                    </div>
+                    <div class="post_content">
+                        <h3><a href="blog_post.html">{{c.title}}</a></h3>
+                        <strong>Author:</strong> {{c.uname}} | <strong>Category:</strong> <a href="#">{{c.tname}}</a>
+                        <a href="#" target="_parent"><img src="{{c.photo}}" alt="image" style="width:400px;height:250px;"/></a>
+                        <p>{{c.description}}</p>
+                        <p><a href="blog_post.html">{{c.comments}} Comments</a> | <a href="/view?cid={{c.cid}}&mytype={{mytype}}">Continue reading...</a>                </p>
+                    </div>
+                    <div class="cleaner"></div>
+                </div>
+                {%endfor%}
+                <div class="pager">
+                    <ul>
+                        <li class="previous">
+                            {%if page<=1%}
+                            <a href="#">上一页</a>
+                            {%else%}
+                            <a href="?page={{page-1}}&&mytype={{mytype}}">上一页</a>
+                            {%endif%}
+                        </li>
+                        <li>
+                            <strong> {{page}} / {{pages}} </strong>
+                        </li>
+                        <li class="next">
+                            {%if page>=pages%}
+                            <a href="#">下一页</a>
+                            {%else%}
+                            <a href="?page={{page+1}}&&mytype={{mytype}}">下一页</a>
+                            {%endif%}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="templatemo_sidebar">
+                <h4>分类</h4>
+                <ul class="templatemo_list">
+                    {% for t in types %}
+                    <li><a href="/?mytype={{t.tid}}">{{t.tname}}</a></li>
+                    {%endfor%}
+                </ul>
+                <div class="cleaner_h40"></div>
+                <h4>最新消息</h4>
+                <ul class="templatemo_list">
+                    <li>free css templates</li>
+                    <li><a href="#" target="_parent">Flash Templates</a></li>
+                    <li><a href="http://www.cssmoban.com/" target="_parent">Free Blog Themes</a></li>
+                    <li><a href="http://www.webdesignmo.com/blog" target="_parent">Web Design Blog</a></li>
+                    <li><a href="http://www.koflash.com" target="_parent">Flash Websites Gallery</a></li>
+                    <li><a href="#">Vestibulum laoreet</a></li>
+                    <li><a href="#">Nullam nec mi enim</a></li>
+                    <li><a href="#">Aliquam quam nulla</a></li>
+                </ul>
+                <div id="ads">
+                    <a href="#"><img src="../../public/imgs/templatemo_200x100_banner.jpg" alt="banner 1" /></a>
+                    <a href="#"><img src="../../public/imgs/templatemo_200x100_banner.jpg" alt="banner 2" /></a>
+                </div>
+            </div>
+            <div class="cleaner"></div>
+
+        </div>
+        </div>
+    </div>
+    <div id="templatemo_main_bottom"></div>
+
+</div>
+</body>
+</html>

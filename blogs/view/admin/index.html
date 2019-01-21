@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link href="../../public/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../public/css/templatemo_style1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../../public/js/jquery-1.12.4.min.js"></script>
+    <script src="../../public/js/tether.min.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+<div id="templatemo_menu_panel">
+    <div id="templatemo_menu_section">
+       <h2>后台管理</h2>
+    </div>
+</div>
+<div id="templatemo_header_content_container">
+
+    <div id="templatemo_header_section">
+        <div id="templatemo_title_section">
+            Admin BLOG
+        </div>
+    </div>
+
+    <div id="templatemo_content">
+        <div id="templatemo_content_left">
+
+            <div class="templatemo_post">
+                {%block main%}{%endblock%}
+            </div>
+        </div>
+
+        <div id="templatemo_content_right">
+
+            <div class="templatemo_right_section">
+                <h2>用户管理</h2>
+                <ul>
+                    <li><a href="/admin/user">用户信息</a></li>
+                </ul>
+            </div>
+
+            <div class="templatemo_right_section">
+                <h2>分类管理</h2>
+                <ul>
+                    <li><a href="/admin/kind">分类首页</a></li>
+                    <li><a href="/admin/kind/add">添加分类</a></li>
+                </ul>
+            </div>
+
+            <div class="templatemo_right_section">
+                <h2>内容管理</h2>
+                <ul>
+                    <li><a href="/admin/content">内容首页</a></li>
+                    <li><a href="/admin/content/add">添加内容</a></li>
+                </ul>
+            </div>
+
+            <div class="templatemo_right_section">
+                <h2>Recent Comments</h2>
+                <ul>
+                    <li>Lorem Ipsum on <a href="#">Donec mollis aliquet</a></li>
+                    <li>Consectetuer on <a href="#">Suspendisse a nibh</a></li>
+                    <li>Sed on <a href="#">Pellentesque vitae magna</a></li>
+                    <li>Vitae Neque on <a href="#">Nunc blandit orci sit amet</a></li>
+                    <li>Donec Mollis on <a href="#">Maecenas adipiscing</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="templatemo_bottom_panel"></div>
+<div id="templatemo_footer_panel"></div>
+
+</body>
+</html>
